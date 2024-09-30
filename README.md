@@ -10,6 +10,7 @@
 ## 🤝 스터디 소개
 
 - [GDG on Campus Sookmyung Flutter Study Notion](https://orange-whale-5b0.notion.site/1-Flutter-9cf96f00353040c5bdac95dfbb67c2d1?pvs=4)
+- [GDG on Campus Sookmyung Flutter Study Tistory](https://dsc-sookmyung.tistory.com/category/Group%20Study%20%282024-2025%29/Flutter)
 
 ### 커리큘럼
 
@@ -41,4 +42,4 @@
 ## 👀 GDSC 팀블로그 작성
 
 - 각 주차 주제별 기술 블로그 작성
-- 작성 순서 : 
+- 작성 순서 : 제유진 -> 안예빈 -> 최우진 -> 홍정인 -> 홍서현
