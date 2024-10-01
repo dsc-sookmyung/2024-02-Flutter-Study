@@ -3,7 +3,7 @@
 ## 📋 Summary
 
 - 구현한 내용 요약
-  [text](https://descriptive-tune-e56.notion.site/Dart-10fa731a13848035be79cb8875a5c929?pvs=4)
+  [노션 링크](https://descriptive-tune-e56.notion.site/Dart-10fa731a13848035be79cb8875a5c929?pvs=4)
 
 ## 💡 Changes
 
