@@ -4,5 +4,6 @@
       "source.fixAll": "explicit"
     },
     "dart.previewFlutterUiGuides": true
-  }
+  },
+    "editor.formatOnSave": true
 }
