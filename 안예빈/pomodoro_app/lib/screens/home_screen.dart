@@ -10,7 +10,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  static const twentyFiveMinuter = 10;
+  static const twentyFiveMinuter = 1500;
   int totalSeconds = twentyFiveMinuter;
   bool isRunning = false;
   int totalPomodors = 0;
@@ -19,6 +19,7 @@ class _HomeScreenState extends State<HomeScreen> {
   //1초마다 진행되는 함수
   void onTick(Timer timer) {
     if (totalSeconds == 0) {
+      //시간이 다 됐을 때
       setState(() {
         totalPomodors += 1;
         isRunning = false;
@@ -70,6 +71,7 @@ class _HomeScreenState extends State<HomeScreen> {
       body: Column(
         children: [
           Flexible(
+            //UI를 비율에 기반해서 크기를 변경해준다.
             flex: 1,
             child: Container(
               alignment: Alignment.bottomCenter,
@@ -86,9 +88,10 @@ class _HomeScreenState extends State<HomeScreen> {
             flex: 2,
             child: Center(
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.center, //버튼 정렬
                 children: [
                   IconButton(
+                    //시작/일시 정지 버튼
                     iconSize: 70,
                     color: Theme.of(context).cardColor,
                     onPressed: isRunning ? onPausePressed : onStartPressed,
@@ -96,8 +99,9 @@ class _HomeScreenState extends State<HomeScreen> {
                         ? Icons.pause_circle_outline
                         : Icons.play_circle_outline),
                   ),
-                  const SizedBox(width: 20),
+                  const SizedBox(width: 20), //버튼 사이 간격
                   IconButton(
+                    //리셋 버튼
                     iconSize: 70,
                     color: Theme.of(context).cardColor,
                     onPressed: onRestPressed,
@@ -108,7 +112,6 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ),
           Flexible(
-            //UI를 비율에 기반해서 크기를 변경해준다.
             flex: 1,
             child: Row(
               children: [
