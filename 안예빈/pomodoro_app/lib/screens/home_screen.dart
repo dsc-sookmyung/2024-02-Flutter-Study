@@ -10,7 +10,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  static const twentyFiveMinuter = 1500;
+  static const twentyFiveMinuter = 10;
   int totalSeconds = twentyFiveMinuter;
   bool isRunning = false;
   int totalPomodors = 0;
@@ -32,7 +32,7 @@ class _HomeScreenState extends State<HomeScreen> {
     }
   }
 
-  //시작 할 때
+  //시작 함수
   void onStartPressed() {
     timer = Timer.periodic(const Duration(seconds: 1), onTick);
     setState(() {
@@ -40,10 +40,20 @@ class _HomeScreenState extends State<HomeScreen> {
     });
   }
 
+  //정지 함수
   void onPausePressed() {
     timer.cancel();
     setState(() {
       isRunning = false;
+    });
+  }
+
+  //새로고침 함수
+  void onRestPressed() {
+    setState(() {
+      isRunning = false;
+      totalSeconds = twentyFiveMinuter;
+      onPausePressed();
     });
   }
 
@@ -75,13 +85,25 @@ class _HomeScreenState extends State<HomeScreen> {
           Flexible(
             flex: 2,
             child: Center(
-              child: IconButton(
-                iconSize: 70,
-                color: Theme.of(context).cardColor,
-                onPressed: isRunning ? onPausePressed : onStartPressed,
-                icon: Icon(isRunning
-                    ? Icons.pause_circle_outline
-                    : Icons.play_circle_outline),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  IconButton(
+                    iconSize: 70,
+                    color: Theme.of(context).cardColor,
+                    onPressed: isRunning ? onPausePressed : onStartPressed,
+                    icon: Icon(isRunning
+                        ? Icons.pause_circle_outline
+                        : Icons.play_circle_outline),
+                  ),
+                  const SizedBox(width: 20),
+                  IconButton(
+                    iconSize: 70,
+                    color: Theme.of(context).cardColor,
+                    onPressed: onRestPressed,
+                    icon: const Icon(Icons.restart_alt_outlined),
+                  ),
+                ],
               ),
             ),
           ),
