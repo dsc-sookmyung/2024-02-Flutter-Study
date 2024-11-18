@@ -1,0 +1,68 @@
+{
+  // IntelliSense를 사용하여 가능한 특성에 대해 알아보세요.
+  // 기존 특성에 대한 설명을 보려면 가리킵니다.
+  // 자세한 내용을 보려면 https://go.microsoft.com/fwlink/?linkid=830387을(를) 방문하세요.
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "pomodoro_app",
+      "cwd": "pomodoro_app",
+      "request": "launch",
+      "type": "dart"
+    },
+    {
+      "name": "pomodoro_app (profile mode)",
+      "cwd": "pomodoro_app",
+      "request": "launch",
+      "type": "dart",
+      "flutterMode": "profile"
+    },
+    {
+      "name": "pomodoro_app (release mode)",
+      "cwd": "pomodoro_app",
+      "request": "launch",
+      "type": "dart",
+      "flutterMode": "release"
+    },
+    {
+      "name": "state_app",
+      "cwd": "state_app",
+      "request": "launch",
+      "type": "dart"
+    },
+    {
+      "name": "state_app (profile mode)",
+      "cwd": "state_app",
+      "request": "launch",
+      "type": "dart",
+      "flutterMode": "profile"
+    },
+    {
+      "name": "state_app (release mode)",
+      "cwd": "state_app",
+      "request": "launch",
+      "type": "dart",
+      "flutterMode": "release"
+    },
+    {
+      "name": "toonflix",
+      "cwd": "week03/toonflix",
+      "request": "launch",
+      "type": "dart"
+    },
+    {
+      "name": "toonflix (profile mode)",
+      "cwd": "week03/toonflix",
+      "request": "launch",
+      "type": "dart",
+      "flutterMode": "profile"
+    },
+    {
+      "name": "toonflix (release mode)",
+      "cwd": "week03/toonflix",
+      "request": "launch",
+      "type": "dart",
+      "flutterMode": "release"
+    }
+  ]
+}
