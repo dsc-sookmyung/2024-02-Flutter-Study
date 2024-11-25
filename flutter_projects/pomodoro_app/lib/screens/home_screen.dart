@@ -12,6 +12,7 @@ class _HomeScreenState extends State<HomeScreen> {
   static const twentyFiveMinutes = 1500;
   int totalSeconds = twentyFiveMinutes; // 25분을 초로 환산한 값
   bool isRunning = false;
+  // late - 해당 property를 당장 초기화하지 않아도 된다
   late Timer timer;
   int totalPomodoros = 0;
 
