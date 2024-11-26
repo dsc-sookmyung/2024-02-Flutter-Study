@@ -27,19 +27,56 @@ class HomeScreen extends StatelessWidget {
         builder: (context, snapshot) {
           if (snapshot.hasData) {
             //데이터를 가지고 있을 때만 실행
-            return ListView.separated(
-              scrollDirection: Axis.horizontal,
-              itemCount: snapshot.data!.length,
-              itemBuilder: (context, index) {
-                var webtoon = snapshot.data![index];
-                return Text(webtoon.title);
-              },
-              separatorBuilder: (context, index) => const SizedBox(width: 20),
-            ); //사용자가 보고있는 아이템만 빌드업
+            return Column(
+              children: [
+                const SizedBox(
+                  height: 50,
+                ),
+                Expanded(child: makeList(snapshot))
+              ],
+            );
           }
           return const Center(child: CircularProgressIndicator());
         },
       ),
+    );
+  }
+
+  ListView makeList(AsyncSnapshot<List<WebtoonModel>> snapshot) {
+    return ListView.separated(
+      scrollDirection: Axis.horizontal,
+      itemCount: snapshot.data!.length,
+      padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+      itemBuilder: (context, index) {
+        //ListView의 아이템을 만드는 역할
+        var webtoon = snapshot.data![index]; //사용자가 보고있는 아이템만 빌드업
+        return Column(
+          children: [
+            Container(
+              width: 200,
+              clipBehavior: Clip.hardEdge,
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(15),
+                  boxShadow: [
+                    BoxShadow(
+                        blurRadius: 5,
+                        offset: Offset(10, 0),
+                        color: Colors.black.withOpacity(0.5))
+                  ]),
+              child: Image.network(webtoon.thumb),
+            ),
+            const SizedBox(
+              height: 15,
+            ),
+            Text(
+              webtoon.title,
+              style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
+            ),
+          ],
+        );
+      },
+      separatorBuilder: (context, index) =>
+          const SizedBox(width: 40), //아이템들 사이 구분 빌더
     );
   }
 }
