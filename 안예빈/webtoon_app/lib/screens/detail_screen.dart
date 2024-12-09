@@ -76,10 +76,13 @@ class _DetailScreenState extends State<DetailScreen> {
         backgroundColor: Colors.green,
         foregroundColor: Colors.white,
         actions: [
-          IconButton(
-            onPressed: onHeartTap,
-            icon: Icon(
-              isLiked ? Icons.favorite : Icons.favorite_outline,
+          Padding(
+            padding: const EdgeInsets.only(right: 40.0), //아이콘 이동
+            child: IconButton(
+              onPressed: onHeartTap,
+              icon: Icon(
+                isLiked ? Icons.favorite : Icons.favorite_outline,
+              ),
             ),
           ),
         ],
